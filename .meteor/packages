@@ -28,3 +28,4 @@ aldeed:simple-schema
 cfs:autoform
 cfs:graphicsmagick
 cfs:s3
+jonblum:jquery-cropper

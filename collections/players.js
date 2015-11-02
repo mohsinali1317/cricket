@@ -60,16 +60,16 @@ var PlayerSchema = new SimpleSchema({
 
 });
 
-//var createThumb = function (fileObj, readStream, writeStream) {
-//    // Transform the image into a 10x10px thumbnail
-//    gm(readStream, fileObj.name()).resize('200', '200').stream().pipe(writeStream);
-//};
+var createThumb = function (fileObj, readStream, writeStream) {
+    // Transform the image into a 10x10px thumbnail
+    gm(readStream, fileObj.name()).resize('200', '200').stream().pipe(writeStream);
+};
 
 var dropboxStore = new FS.Store.Dropbox("playerProfilePictures", {
     key: "01sv4di85w78xd4",
     secret: "wv6c1ak6jc6964a",
-    token: "qaE0mHdehJsAAAAAAAAD5JGtjUgbytS_lubFRK2yo1TYGNYHXk-ggR3GeDk1RHFu" // Don’t share your access token with anyone.
-   // transformWrite: createThumb, //optional
+    token: "qaE0mHdehJsAAAAAAAAD5JGtjUgbytS_lubFRK2yo1TYGNYHXk-ggR3GeDk1RHFu", // Don’t share your access token with anyone.
+    transformWrite: createThumb, //optional
 });
 
 //var imageStore = new FS.Store.S3("playerProfilePictures", {
