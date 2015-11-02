@@ -1,0 +1,34 @@
+<template name="teams">
+
+    <div class="section-header">
+        <h5>Division 2, 2015</h5>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th class="name">Team</th>
+            <th>Played</th>
+            <th>Wins</th>
+            <th>Lost</th>
+            <th>Tie</th>
+            <th class="ranked">Points</th>
+            <th>NRR</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each teams}}
+            <tr>
+                <td> {{name}}</td>
+                <td> {{matches}}</td>
+                <td> {{matchesWon}}</td>
+                <td> {{matchesLost}}</td>
+                <td> {{matchesTied}}</td>
+                <td> {{points}}</td>
+                <td> {{netRunRate}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+
+    </table>
+
+</template>

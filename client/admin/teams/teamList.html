@@ -1,0 +1,22 @@
+<template name="teamList">
+
+    <h4><a href="{{pathFor 'addTeam'}}">Add Team  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </a></h4>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th class="name">Team</th>
+            <th class="name">Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {{#each teams}}
+            <tr>
+                <td> {{name}}</td>
+                <td><a href="{{pathFor 'editTeam'}}">Edit</a> <a class="deleteTeam" href="#" >Delete</a> </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>

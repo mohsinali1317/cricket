@@ -1,0 +1,13 @@
+<template name="editTeam">
+
+    <div class="row">
+        <div class="col-md-2">
+            <h4>Edit Team {{name}}</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="{{pathFor 'teamList'}}" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+
+    {{> quickForm collection="Teams" id="updateTeamForm" type="update" doc=this}}
+</template>

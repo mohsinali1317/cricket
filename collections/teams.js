@@ -5,48 +5,49 @@
 
 Teams = new Mongo.Collection("teams");
 
-var PlayerSchema = new SimpleSchema({
+var TeamSchema = new SimpleSchema({
     name: {
         type: String
     },
     matches: {
-        type: String
+        type: Number,
+        defaultValue: 0
     },
     matchesWon: {
-        type: String
+        type: Number,
+        defaultValue: 0
     },
     matchesLost: {
-        type: String
+        type: Number,
+        defaultValue: 0
     },
     matchesTied: {
-        type: String
+        type: Number,
+        defaultValue: 0
     },
     points: {
-        type: String
+        type: Number,
+        decimal: true,
+        defaultValue: 0
     },
-
-    imageId: {
-        type: String
+    netRunRate: {
+        type: Number,
+        decimal: true,
+        defaultValue: 0,
+        min: -90,
+        max: 90
     },
-    memberSince: {
-        type: Date,
+    pointsDeducted: {
+        type: Number,
         optional: true
     },
-    isCaptain: {
-        type: Boolean,
-        defaultValue: false
-    },
-    isViceCaptain: {
-        type: Boolean,
-        defaultValue: false
-    },
-    isLeader: {
-        type: Boolean,
-        defaultValue: false
-    },
-    isKeeper: {
+    isOurTeam: {
         type: Boolean,
         defaultValue: false
     }
 
 });
+
+Teams.attachSchema(TeamSchema);
+
+
