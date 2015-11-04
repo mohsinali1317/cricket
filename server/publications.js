@@ -6,6 +6,9 @@ Meteor.publish('players', function () {
     return Players.find();
 });
 
+Meteor.publish('singlePlayer', function (id) {
+    return id && Players.find(id);
+});
 
 // check if the points are same then send order by nrr
 
@@ -22,6 +25,11 @@ Meteor.publish('singleTeam', function (id) {
     return id && Teams.find(id);
 });
 
+Meteor.publish('teamsInThisYearsCompetition', function (year) {
+    var competition = Competitions.findOne({year:year});
+    return Teams.find({_id:{$in:competition.teams}});
+});
+
 Meteor.publish('teamsInThisCompetition', function (id) {
     var competition = Competitions.findOne(id);
     return Teams.find({_id:{$in:competition.teams}});
@@ -33,6 +41,10 @@ Meteor.publish('competitions', function () {
 
 Meteor.publish('singleCompetition', function (id) {
     return id && Competitions.find(id);
+});
+
+Meteor.publish('competitionByYear', function (year) {
+    return year && Competitions.find({year:year});
 });
 
 Meteor.publish('playerProfilePictures', function () {

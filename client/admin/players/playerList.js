@@ -4,7 +4,7 @@
 
 Template.playerList.helpers({
     players: function () {
-        return Players.find();
+        return Players.find({},{sort:{firstName:1}});
     },
     fullName : function(){
         return this.firstName + " " + this.lastName;

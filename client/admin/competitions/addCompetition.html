@@ -1,10 +1,27 @@
 <template name="addCompetition">
-    {{#autoForm id="insertCompetitionForm" type="insert" collection="Competitions"}}
-        {{> afQuickField name="year"}}
-        {{> afQuickField name="division" options="allowed"}}
-        {{> afQuickField name="teams" options=teamsList}}
 
-        <button type="submit"  class="btn btn-primary">Submit</button>
-    {{/autoForm}}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-10 col-lg-10 col-xs-9 col-sm-9">
+                <h4>Add Competition</h4>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xs-3 col-sm-3 pull-right">
+                <a href="{{pathFor 'competitionList'}}" class="btn btn-primary pull-right">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-sm-12">
+                {{#autoForm id="insertCompetitionForm" type="insert" collection="Competitions"}}
+                    {{> afQuickField name="year"}}
+                    {{> afQuickField name="division" options="allowed"}}
+                    {{> afQuickField name="teams" options=teamsList}}
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                {{/autoForm}}
+            </div>
+        </div>
+    </div>
 
 </template>

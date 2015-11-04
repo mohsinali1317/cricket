@@ -1,20 +1,21 @@
-<template name="addPlayer">
+<template name="editPlayer">
 
     <div class="container-fluid">
+
         <div class="row-fluid">
             <div class="col-md-10 col-lg-10 col-xs-9 col-sm-9">
-                <h4>Add Player</h4>
+                 <img class="player-img-edit img-rounded" src="{{imageUrl.url}}">
             </div>
             <div class="col-md-2 col-lg-2 col-xs-3 col-sm-3 pull-right">
                 <a href="{{pathFor 'playerList'}}" class="btn btn-primary pull-right">Cancel</a>
             </div>
         </div>
     </div>
+
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="col-sm-12">
-
-                {{#autoForm id="insertForm" type="insert" collection="Players"}}
+                {{#autoForm id="updatePlayer" type="update" collection="Players" doc=this}}
                     {{> afQuickField name="firstName" class="required"}}
                     {{> afQuickField name="lastName"}}
                     {{> afQuickField name="email"}}
@@ -28,11 +29,11 @@
                     {{> afQuickField name="isViceCaptain"}}
                     {{> afQuickField name="isLeader"}}
                     {{> afQuickField name="isKeeper"}}
-
                     {{> afQuickField name="imageId" type="cfs-file" collection="playerProfilePictures"}}
                     <button type="submit" class="btn btn-primary">Submit</button>
                 {{/autoForm}}
             </div>
         </div>
     </div>
+
 </template>
