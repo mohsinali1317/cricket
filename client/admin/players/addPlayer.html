@@ -1,4 +1,14 @@
 <template name="addPlayer">
+
+    <div class="row">
+        <div class="col-md-2">
+            <h4>Add Player</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="{{pathFor 'playerList'}}" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+
     {{#autoForm id="insertForm" type="insert" collection="Players"}}
         {{> afQuickField name="firstName" class="required"}}
         {{> afQuickField name="lastName"}}
@@ -7,14 +17,14 @@
         {{> afQuickField name="gender" options="allowed"}}
         {{> afQuickField name="bowlingStyle" options="allowed"}}
         {{> afQuickField name="battingStyle" options="allowed"}}
-        {{> afQuickField name="birthday"}}
-        {{> afQuickField name="memberSince"}}
+        {{> afQuickField name="birthday" buttonClasses="glyphicon glyphicon-calendar"}}
+        {{> afQuickField name="memberSince" buttonClasses="glyphicon glyphicon-calendar"}}
         {{> afQuickField name="isCaptain"}}
         {{> afQuickField name="isViceCaptain"}}
         {{> afQuickField name="isLeader"}}
         {{> afQuickField name="isKeeper"}}
 
         {{> afQuickField name="imageId" type="cfs-file" collection="playerProfilePictures"}}
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     {{/autoForm}}
 </template>

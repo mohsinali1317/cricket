@@ -5,7 +5,7 @@
 
 Teams = new Mongo.Collection("teams");
 
-var TeamSchema = new SimpleSchema({
+TeamSchema = new SimpleSchema({
     name: {
         type: String
     },
@@ -49,5 +49,4 @@ var TeamSchema = new SimpleSchema({
 });
 
 Teams.attachSchema(TeamSchema);
-
 

@@ -1,0 +1,38 @@
+<template name="competitionDetails">
+
+    <div class="row">
+        <div class="col-md-2">
+            <h4>{{competitions.division}} Division {{competitions.year}}</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="{{pathFor 'competitionList'}}" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+
+    {{> teamsInThisDivision}}
+
+
+
+</template>
+
+
+<template name="teamsInThisDivision">
+
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th class="name">Name</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {{#each teams}}
+            <tr>
+                <td> {{name}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+</template>

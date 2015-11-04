@@ -1,10 +1,10 @@
 <template name="addTeam">
     <div class="row">
         <div class="col-md-2">
-            <h4>Edit Team {{name}}</h4>
+            <h4>Add Team</h4>
         </div>
-        <div class="col-md-2">
-            <a href="{{pathFor 'teamList'}}" class="btn btn-primary">Cancel</a>
+        <div class="col-md-1">
+            <a href="{{pathFor 'teamList'}}" class="btn btn-primary">Back</a>
         </div>
     </div>
     {{> quickForm collection="Teams" id="insertTeamForm" type="insert" omitFields="pointsDeducted"}}

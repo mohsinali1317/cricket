@@ -28,7 +28,13 @@ var PlayerSchema = new SimpleSchema({
     },
     birthday: {
         type: Date,
-        optional: true
+        optional: true,
+        autoform: {
+            type: "bootstrap-datepicker",
+            datePickerOptions:{
+                autoclose: true
+            }
+        }
     },
     gender: {
         type: String,
@@ -38,8 +44,17 @@ var PlayerSchema = new SimpleSchema({
         type: String
     },
     memberSince: {
-        type: Date,
-        optional: true
+        type: String,
+        optional: true,
+        autoform: {
+            type: "bootstrap-datepicker",
+            datePickerOptions:{
+                autoclose: true
+                //format: "mm-yyyy",
+                //viewMode: "months",
+                //minViewMode: "months"
+            }
+        }
     },
     isCaptain: {
         type: Boolean,
@@ -62,7 +77,10 @@ var PlayerSchema = new SimpleSchema({
 
 var createThumb = function (fileObj, readStream, writeStream) {
     // Transform the image into a 10x10px thumbnail
-    gm(readStream, fileObj.name()).resize('200', '200').stream().pipe(writeStream);
+  //  gm(readStream, fileObj.name()).resize('150', '150').stream().pipe(writeStream);
+
+    gm(readStream, fileObj.name()).resize('200>','200^').stream().pipe(writeStream);
+
 };
 
 var dropboxStore = new FS.Store.Dropbox("playerProfilePictures", {

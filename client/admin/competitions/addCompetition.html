@@ -1,0 +1,10 @@
+<template name="addCompetition">
+    {{#autoForm id="insertCompetitionForm" type="insert" collection="Competitions"}}
+        {{> afQuickField name="year"}}
+        {{> afQuickField name="division" options="allowed"}}
+        {{> afQuickField name="teams" options=teamsList}}
+
+        <button type="submit"  class="btn btn-primary">Submit</button>
+    {{/autoForm}}
+
+</template>
