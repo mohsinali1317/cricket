@@ -1,13 +1,21 @@
 <template name="editTeam">
 
-    <div class="row">
-        <div class="col-md-2">
-            <h4>Edit Team {{name}}</h4>
-        </div>
-        <div class="col-md-2">
-            <a href="{{pathFor 'teamList'}}" class="btn btn-primary">Cancel</a>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-10 col-lg-10 col-xs-9 col-sm-9">
+                <h4>Edit Team {{name}}</h4>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xs-3 col-sm-3 pull-right">
+                <a href="{{pathFor 'teamList'}}" class="btn btn-primary pull-right">Cancel</a>
+            </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-sm-12">
 
-    {{> quickForm collection="Teams" id="updateTeamForm" type="update" doc=this}}
+                {{> quickForm collection="Teams" id="updateTeamForm" type="update" doc=this}}
+            </div>
+        </div>
+    </div>
 </template>

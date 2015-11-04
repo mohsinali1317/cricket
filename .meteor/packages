@@ -29,3 +29,5 @@ cfs:autoform
 cfs:graphicsmagick
 cfs:s3
 jonblum:jquery-cropper
+aldeed:autoform-bs-datepicker
+rajit:bootstrap3-datepicker

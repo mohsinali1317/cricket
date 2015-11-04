@@ -1,7 +1,7 @@
 <template name="teams">
 
     <div class="section-header">
-        <h5>Division 2, 2015</h5>
+        <h5>{{competitions.division}} Division, {{competitions.year}}</h5>
     </div>
     <table class="table table-striped table-bordered">
         <thead>
@@ -17,7 +17,7 @@
         </thead>
         <tbody>
         {{#each teams}}
-            <tr>
+            <tr class="{{ourTeam}}">
                 <td> {{name}}</td>
                 <td> {{matches}}</td>
                 <td> {{matchesWon}}</td>
