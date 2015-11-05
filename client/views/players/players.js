@@ -3,7 +3,7 @@
  */
 Template.players.helpers({
     players : function(){
-        return Players.find();
+        return Players.find({},{sort:{firstName:1}});
     }
 })
 

@@ -1,9 +1,11 @@
 <template name="layout">
     <div class="wrap">
         {{> header}}
-    <div class="row-fluid main">
-        {{> yield}}
-    </div>
+        <div class="container main">
+            <div class="row-fluid">
+                {{> yield}}
+            </div>
+        </div>
     </div>
     {{> footer}}
     {{> copyRight}}
