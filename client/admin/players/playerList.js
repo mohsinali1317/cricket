@@ -10,3 +10,12 @@ Template.playerList.helpers({
         return this.firstName + " " + this.lastName;
     }
 });
+
+Template.playerList.events({
+    'click .deletePlayer': function (e) {
+        e.preventDefault();
+        if (confirm("Delete this player?")) {
+            Players.remove(this._id);
+        }
+    }
+});

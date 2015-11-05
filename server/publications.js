@@ -27,7 +27,7 @@ Meteor.publish('singleTeam', function (id) {
 
 Meteor.publish('teamsInThisYearsCompetition', function (year) {
     var competition = Competitions.findOne({year:year});
-    return Teams.find({_id:{$in:competition.teams}});
+    return competition && Teams.find({_id:{$in:competition.teams}});
 });
 
 Meteor.publish('teamsInThisCompetition', function (id) {
@@ -78,6 +78,9 @@ Players.allow({
     },
     insert: function () {
         // add custom authentication code here
+        return true;
+    },
+    remove: function () {
         return true;
     }
 });

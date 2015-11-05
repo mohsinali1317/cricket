@@ -83,23 +83,23 @@ var createThumb = function (fileObj, readStream, writeStream) {
 
 };
 
-var dropboxStore = new FS.Store.Dropbox("playerProfilePictures", {
-    key: "01sv4di85w78xd4",
-    secret: "wv6c1ak6jc6964a",
-    token: "qaE0mHdehJsAAAAAAAAD5JGtjUgbytS_lubFRK2yo1TYGNYHXk-ggR3GeDk1RHFu", // Don’t share your access token with anyone.
-    transformWrite: createThumb, //optional
-});
-
-//var imageStore = new FS.Store.S3("playerProfilePictures", {
-//    accessKeyId: "AKIAJJ54I3TDMAZRPYHA", //required if environment variables are not set
-//    secretAccessKey: "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", //required if environment variables are not set
-//    bucket: "mohsinclubimages", //required
-//    transformWrite: createThumb //optional
+//var dropboxStore = new FS.Store.Dropbox("playerProfilePictures", {
+//    key: "01sv4di85w78xd4",
+//    secret: "wv6c1ak6jc6964a",
+//    token: "qaE0mHdehJsAAAAAAAAD5JGtjUgbytS_lubFRK2yo1TYGNYHXk-ggR3GeDk1RHFu", // Don’t share your access token with anyone.
+//    transformWrite: createThumb, //optional
 //});
+
+var imageStore = new FS.Store.S3("playerProfilePictures", {
+    accessKeyId: Meteor.settings.AWSAccessKeyId, //required if environment variables are not set
+    secretAccessKey: Meteor.settings.AWSSecretAccessKey, //required if environment variables are not set
+    bucket: Meteor.settings.AWSBucket, //required
+    transformWrite: createThumb //optional
+});
 
 
 PlayerProfilePictures = new FS.Collection("playerProfilePictures", {
-    stores: [dropboxStore]
+    stores: [imageStore]
 });
 Players.attachSchema(PlayerSchema);
 
