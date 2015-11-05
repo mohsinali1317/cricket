@@ -3,7 +3,7 @@
  */
 
 Template.adminLayout.onRendered(function () {
-    $(".navbar-nav li a").click(function(event) {
+    $(".navbar-nav li:not(.dropdown) a").click(function(event) {
         $(".navbar-collapse").collapse('hide');
     });
 });

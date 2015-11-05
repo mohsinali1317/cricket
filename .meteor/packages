@@ -32,6 +32,6 @@ jonblum:jquery-cropper
 aldeed:autoform-bs-datepicker
 rajit:bootstrap3-datepicker
 sacha:spin
-accounts-ui
 accounts-password
 alanning:roles
+ian:accounts-ui-bootstrap-3
