@@ -11,16 +11,24 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand nav-logo" href="{{pathFor 'home'}}"><span>Homlia</span> CC</a>
+
             </div>
 
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{pathFor 'dashboard'}}">Dashboard</a></li>
-                    <li><a href="{{pathFor 'playerList'}}">Players</a></li>
-                    <li><a href="{{pathFor 'teamList'}}">Teams</a></li>
-                    <li><a href="{{pathFor 'competitionList'}}">Competitions</a></li>
+                {{#if currentUser}}
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="{{pathFor 'dashboard'}}">Dashboard</a></li>
+                        <li><a href="{{pathFor 'playerList'}}">Players</a></li>
+                        <li><a href="{{pathFor 'teamList'}}">Teams</a></li>
+                        <li><a href="{{pathFor 'competitionList'}}">Competitions</a></li>
+                    </ul>
+                {{/if}}
+
+                <ul class="nav">
+                    <li>{{> loginButtons}}</li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

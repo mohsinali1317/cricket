@@ -74,41 +74,41 @@ PlayerProfilePictures.allow({
 Players.allow({
     update: function () {
         // add custom authentication code here
-        return true;
+        return isAdmin();
     },
     insert: function () {
         // add custom authentication code here
-        return true;
+        return isAdmin();
     },
     remove: function () {
-        return true;
+        return isAdmin();
     }
 });
 
 Teams.allow({
     update: function () {
         // add custom authentication code here
-        return true;
+        return isAdmin();
     },
     insert: function () {
         // add custom authentication code here
-        return true;
+        return isAdmin();
     },
     remove: function () {
-        return true;
+        return isAdmin();
     }
 });
 
 Competitions.allow({
     update: function () {
         // add custom authentication code here
-        return true;
+        return isAdmin();
     },
     insert: function () {
         // add custom authentication code here
-        return true;
+        return isAdmin();
     },
     remove: function () {
-        return true;
+        return isAdmin();
     }
 });
